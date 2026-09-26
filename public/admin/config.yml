@@ -2,7 +2,7 @@
 # NOTE: set `repo` to your real GitHub repo once created (username/repo-name).
 backend:
   name: github
-  repo: esmsaah/muslim-liberation-theology # TODO: update to the exact repo you create
+  repo: esmsaah/MLT
   branch: main
 
 # Lets you test the CMS locally with `npx decap-server` before auth is wired up.
