@@ -4,9 +4,8 @@ backend:
   name: github
   repo: esmsaah/MLT
   branch: main
-
-# Lets you test the CMS locally with `npx decap-server` before auth is wired up.
-local_backend: true
+  base_url: https://mlt-cms-auth.esma-hodz.workers.dev
+  auth_endpoint: auth
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
