@@ -153,7 +153,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
                 <div set:html={featured.data.embed} />
               ) : (
                 <a
-                  href={featured?.data.link ?? '#'}
+                  href={featured?.data.link || SITE.podcast.youtubeUrl || '#'}
                   target="_blank"
                   rel="noopener"
                   class="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-sm p-8"
@@ -203,6 +203,19 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
             }
           </ul>
         </div>
+
+        {
+          SITE.podcast.youtubeUrl && (
+            <a
+              href={SITE.podcast.youtubeUrl}
+              target="_blank"
+              rel="noopener"
+              class="mt-10 inline-flex items-center gap-2 font-semibold text-gold hover:underline"
+            >
+              View the channel on YouTube →
+            </a>
+          )
+        }
       </div>
     </section>
 

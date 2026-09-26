@@ -33,7 +33,7 @@ export const SITE = {
     embedHtml: '',
     spotifyUrl: '',
     appleUrl: '',
-    youtubeUrl: '',
+    youtubeUrl: 'https://www.youtube.com/@muslimliberationtheology',
   },
 
   // Newsletter — MailerLite / Substack embed URL (TODO)
