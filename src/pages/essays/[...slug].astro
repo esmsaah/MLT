@@ -17,6 +17,24 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 const { title, tag, date, summary } = entry.data;
 
+// Reading time from the raw markdown body
+const words = entry.body.split(/\s+/).filter(Boolean).length;
+const readingTime = Math.max(1, Math.round(words / 200));
+
+// Accent colour by category — matches the coloured rules on the home page
+const accents: Record<string, string> = {
+  Manifesto: 'bg-ink',
+  Debate: 'bg-brick',
+  Genealogy: 'bg-gold',
+};
+const accent = accents[tag] ?? 'bg-brick';
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
 const articleLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -27,26 +45,44 @@ const articleLd = {
   publisher: { '@type': 'Organization', name: SITE.projectName },
   mainEntityOfPage: `${SITE.url}/essays/${entry.slug}`,
 };
-
-const formattedDate = date.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
 ---
 
 <Base title={title} description={summary} path={`/essays/${entry.slug}`}>
   <Nav />
   <main class="bg-parchment">
-    <article class="mx-auto max-w-prose px-5 py-16 md:py-24">
+    <article class="mx-auto max-w-[42rem] px-5 py-14 md:py-20">
       <a href="/#essays" class="text-sm font-semibold text-brick hover:underline">← All essays</a>
-      <p class="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-brick">{tag}</p>
-      <h1 class="mt-3 font-serif text-4xl leading-tight md:text-5xl">{title}</h1>
-      <p class="mt-4 text-sm text-ink/50">{formattedDate}</p>
-      <div class="mt-4 h-px w-full bg-ink/10"></div>
-      <div class="prose-body mt-10">
+
+      <header class="mt-8">
+        <span class={`block h-1 w-14 ${accent}`}></span>
+        <p class="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-ink/60">{tag}</p>
+        <h1 class="mt-3 font-serif text-4xl leading-[1.12] md:text-5xl">{title}</h1>
+        <p class="mt-5 text-sm text-ink/55">{formattedDate} · {readingTime} min read</p>
+        {
+          summary && (
+            <p class="mt-7 border-l-2 border-gold pl-4 font-serif text-xl italic leading-relaxed text-ink/70">
+              {summary}
+            </p>
+          )
+        }
+      </header>
+
+      <div class="mt-10 h-px w-full bg-ink/10"></div>
+
+      <div class="essay-body mt-10">
         <Content />
       </div>
+
+      <!-- End matter -->
+      <footer class="mt-16 border-t border-ink/10 pt-8">
+        <p class="text-sm text-ink/55">
+          An essay from the <span class="font-semibold text-ink/80">Muslim Liberation Theology</span> project.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          <a href="/#essays" class="text-sm font-semibold text-brick hover:underline">← All essays</a>
+          <a href="/#companion" class="text-sm font-semibold text-brick hover:underline">Explore the Companion →</a>
+        </div>
+      </footer>
     </article>
   </main>
   <Footer />

@@ -18,19 +18,86 @@ body {
   color: theme('colors.ink');
 }
 
-/* Long-form article body (for /essays content etc.) */
-.prose-body {
-  @apply text-lg leading-relaxed;
+/* ============================================================
+   Long-form reading experience for a single essay (/essays/…)
+   Georgia serif, generous measure, restrained editorial touches.
+   ============================================================ */
+.essay-body {
+  font-family: theme('fontFamily.serif');
+  font-size: 1.1875rem; /* ~19px */
+  line-height: 1.78;
+  color: rgba(23, 33, 27, 0.9);
 }
-.prose-body p {
-  @apply mb-6;
+
+.essay-body > p {
+  margin-bottom: 1.5rem;
 }
-.prose-body h2 {
-  @apply font-serif text-2xl md:text-3xl mt-12 mb-4;
+
+/* Subtle drop cap on the opening paragraph */
+.essay-body > p:first-of-type::first-letter {
+  float: left;
+  font-family: theme('fontFamily.serif');
+  font-size: 3.4em;
+  line-height: 0.72;
+  padding: 0.05em 0.1em 0 0;
+  color: theme('colors.brick');
 }
-.prose-body h3 {
-  @apply font-serif text-xl mt-8 mb-3;
+
+.essay-body h2 {
+  font-family: theme('fontFamily.serif');
+  font-size: 1.75rem;
+  line-height: 1.25;
+  margin: 2.75rem 0 1rem;
+  color: theme('colors.ink');
 }
-.prose-body blockquote {
-  @apply border-l-4 border-gold pl-5 italic my-8;
+.essay-body h3 {
+  font-family: theme('fontFamily.serif');
+  font-size: 1.35rem;
+  margin: 2rem 0 0.6rem;
+  color: theme('colors.ink');
+}
+
+.essay-body a {
+  color: theme('colors.brick');
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.essay-body blockquote {
+  border-left: 3px solid theme('colors.gold');
+  padding-left: 1.35rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: rgba(23, 33, 27, 0.72);
+}
+
+.essay-body ul,
+.essay-body ol {
+  margin: 0 0 1.5rem 1.25rem;
+}
+.essay-body ul {
+  list-style: disc;
+}
+.essay-body ol {
+  list-style: decimal;
+}
+.essay-body li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.essay-body strong {
+  font-weight: 700;
+  color: theme('colors.ink');
+}
+
+.essay-body hr {
+  border: 0;
+  border-top: 1px solid rgba(23, 33, 27, 0.15);
+  margin: 3rem 0;
+}
+
+.essay-body img {
+  border-radius: 0.25rem;
+  margin: 2rem 0;
 }
