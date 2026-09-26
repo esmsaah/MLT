@@ -1,0 +1,17 @@
+---
+import { SITE } from '../config';
+const editors = SITE.editors.map((e) => e.name).join(' & ');
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-forest text-muted">
+  <div class="mx-auto max-w-6xl px-5 py-12">
+    <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+      <div>
+        <p class="font-serif text-lg text-parchment">Muslim Liberation Theology</p>
+        <p class="mt-1 text-sm">Founded by {editors}</p>
+      </div>
+      <p class="text-sm">© {year} Muslim Liberation Theology. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

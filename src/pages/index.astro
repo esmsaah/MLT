@@ -1,0 +1,286 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import BookCover from '../components/BookCover.astro';
+import { SITE, ENDORSEMENTS } from '../config';
+
+// Essays — authored in the /admin panel, one page each at /essays/<slug>
+const essays = (await getCollection('essays', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const essayRuleColors = ['bg-ink', 'bg-brick', 'bg-gold'];
+
+// Podcast episodes — authored in the /admin panel
+const allEpisodes = (await getCollection('episodes', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const featured = allEpisodes.find((e) => e.data.featured) ?? allEpisodes[0];
+const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 4);
+---
+
+<Base>
+  <span id="top"></span>
+  <Nav />
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="bg-forest2 text-parchment">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            Critical Thought · Spiritual Commitment · Emancipatory Practice
+          </p>
+          <h1 class="mt-6 font-serif text-6xl leading-[0.95] md:text-7xl">
+            Muslim<br />
+            <span class="italic text-gold">Liberation</span><br />
+            Theology
+          </h1>
+          <div class="mt-8 h-px w-24 bg-parchment/30"></div>
+          <p class="mt-8 max-w-md text-lg text-parchment/80">
+            {SITE.tagline}
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a
+              href="#what-is-mlt"
+              class="rounded-sm bg-brick px-6 py-3 font-semibold text-parchment transition-opacity hover:opacity-90"
+              >What is MLT?</a
+            >
+            <a
+              href="#companion"
+              class="rounded-sm border border-parchment/45 px-6 py-3 font-semibold text-parchment transition-colors hover:bg-parchment/10"
+              >Explore the Companion</a
+            >
+          </div>
+        </div>
+        <div class="md:pl-8">
+          <BookCover />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATEMENT (red band) ============ -->
+    <section class="bg-brick text-white">
+      <div class="mx-auto max-w-5xl px-5 py-16 md:py-20">
+        <p class="font-serif text-3xl leading-snug md:text-4xl">
+          Not simply a theology <span class="italic">about</span> liberation, but an Islamic mode
+          of thought and praxis that emerges <span class="italic">from within</span> struggles for justice.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ WHAT IS MLT ============ -->
+    <section id="what-is-mlt" class="scroll-mt-20 bg-parchment">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
+        <h2 class="font-serif text-4xl leading-tight md:text-5xl">
+          What is Muslim Liberation Theology?
+        </h2>
+        <div class="space-y-6 text-lg leading-relaxed text-ink/85">
+          <p>
+            Muslim Liberation Theology draws upon revelation, the Prophetic tradition, Muslim
+            intellectual histories, and contemporary struggles to confront structures of
+            domination and pursue spiritual, social, political, and epistemic liberation.
+          </p>
+          <p class="text-base italic text-ink/50">
+            [Placeholder — add more of the real explanation here. 500–1200 words of real text
+            gives the best SEO and AI visibility.]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE COMPANION ============ -->
+    <section id="companion" class="scroll-mt-20 bg-cream">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
+        <!-- left: cover on dark panel -->
+        <div class="flex items-center justify-center rounded-sm bg-forest2 px-6 py-16">
+          <img
+            src="/cover.png"
+            alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
+            width="250"
+            height="370"
+            class="w-[250px] object-cover object-right"
+            style="aspect-ratio: 250 / 370; box-shadow: 0 28px 55px -18px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.08);"
+          />
+        </div>
+
+        <!-- right: heading + endorsements -->
+        <div>
+          <h2 class="font-serif text-5xl md:text-6xl">The Companion</h2>
+          <div class="mt-8 divide-y divide-ink/15 border-t border-ink/15">
+            {
+              ENDORSEMENTS.map((e) => (
+                <figure class="py-6">
+                  <blockquote class="font-serif text-lg leading-relaxed text-ink">
+                    “{e.quote}”
+                  </blockquote>
+                  <figcaption class="mt-3 text-sm text-ink/60">
+                    <span class="font-semibold text-brick">{e.name}</span>{`, ${e.title}`}
+                  </figcaption>
+                </figure>
+              ))
+            }
+          </div>
+          <a
+            href={SITE.buyUrl}
+            target="_blank"
+            rel="noopener"
+            class="mt-6 inline-block font-semibold text-brick hover:underline"
+            >Discover the book →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONVERSATIONS / PODCAST ============ -->
+    <section id="conversations" class="scroll-mt-20 bg-forest text-parchment">
+      <div class="mx-auto max-w-6xl px-5 py-20">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          Watch · Listen · Think
+        </p>
+        <h2 class="mt-4 font-serif text-4xl md:text-5xl">MLT Conversations</h2>
+        <p class="mt-6 max-w-2xl text-lg text-parchment/80">
+          The audiovisual journal of the project: sustained conversations with scholars, thinkers,
+          and activists on Islam, liberation, decoloniality, and emancipatory praxis.
+        </p>
+
+        <div class="mt-12 grid gap-10 md:grid-cols-2">
+          <!-- Featured player -->
+          <div>
+            {
+              featured?.data.embed ? (
+                <div set:html={featured.data.embed} />
+              ) : (
+                <a
+                  href={featured?.data.link ?? '#'}
+                  target="_blank"
+                  rel="noopener"
+                  class="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-sm p-8"
+                  style="background: linear-gradient(135deg, #4a1a15 0%, #1c0c09 100%);"
+                >
+                  <span class="pointer-events-none absolute inset-0 flex items-center justify-center font-serif text-[160px] font-bold leading-none text-white/5 select-none">
+                    MLT
+                  </span>
+                  <span class="absolute left-8 top-8 grid h-14 w-14 place-items-center rounded-full border-2 border-white/70 text-lg text-white transition-transform group-hover:scale-105">
+                    ▶
+                  </span>
+                  <div class="relative">
+                    <p class="text-xs font-semibold uppercase tracking-[0.15em] text-white/70">
+                      {featured?.data.tag ?? 'Featured conversation'}
+                    </p>
+                    <p class="mt-2 font-serif text-2xl text-white">
+                      {featured?.data.title ?? 'Coming soon'}
+                    </p>
+                  </div>
+                </a>
+              )
+            }
+          </div>
+
+          <!-- List -->
+          <ul class="divide-y divide-parchment/15 border-t border-parchment/15">
+            {
+              conversations.map((c) => (
+                <li class="py-5">
+                  <p class="text-xs font-semibold uppercase tracking-[0.15em] text-gold">
+                    {c.data.tag}
+                  </p>
+                  {c.data.link ? (
+                    <a
+                      href={c.data.link}
+                      target="_blank"
+                      rel="noopener"
+                      class="mt-1 block font-serif text-xl text-parchment hover:text-gold"
+                    >
+                      {c.data.title}
+                    </a>
+                  ) : (
+                    <p class="mt-1 font-serif text-xl text-parchment">{c.data.title}</p>
+                  )}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ESSAYS ============ -->
+    <section id="essays" class="scroll-mt-20 bg-parchment">
+      <div class="mx-auto max-w-6xl px-5 py-20">
+        <!-- two-column header -->
+        <div class="grid gap-8 md:grid-cols-2 md:gap-16">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/60">
+              Ideas in Movement
+            </p>
+            <h2 class="mt-3 font-serif text-4xl leading-tight md:text-5xl">
+              Essays &amp; interventions
+            </h2>
+          </div>
+          <p class="self-end text-lg leading-relaxed text-ink/80">
+            A space in which Muslim Liberation Theology continues to develop through argument,
+            critique, reflection, and engagement with contemporary struggles.
+          </p>
+        </div>
+
+        <!-- three unboxed columns with colored top rules -->
+        <div class="mt-14 grid gap-10 md:grid-cols-3">
+          {
+            essays.map((e, i) => (
+              <a href={`/essays/${e.slug}`} class="group flex flex-col">
+                <span class={`h-1 w-full ${essayRuleColors[i % essayRuleColors.length]}`} />
+                <p class="mt-4 text-xs font-semibold uppercase tracking-[0.15em] text-ink/60">
+                  {e.data.tag}
+                </p>
+                <h3 class="mt-2 font-serif text-2xl leading-tight group-hover:text-brick">
+                  {e.data.title}
+                </h3>
+                <p class="mt-3 flex-1 text-ink/70">{e.data.summary}</p>
+                <span class="mt-6 text-xs font-semibold uppercase tracking-[0.15em] text-ink">
+                  Read essay →
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NETWORK / NEWSLETTER (gold band) ============ -->
+    <section id="network" class="scroll-mt-20 bg-gold text-ink">
+      <div class="mx-auto max-w-6xl px-5 py-20">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/70">
+          The MLT Network
+        </p>
+        <h2 class="mt-4 max-w-3xl font-serif text-4xl leading-tight md:text-6xl">
+          A field is built through conversation.
+        </h2>
+        <p class="mt-6 max-w-xl text-lg text-ink/80">
+          Receive new essays, conversations, events, and developments in Muslim Liberation Theology.
+        </p>
+        <form
+          class="mt-10 flex max-w-md flex-col gap-3 sm:flex-row"
+          action={SITE.newsletterActionUrl || '#'}
+          method="post"
+        >
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Your email address"
+            class="flex-1 rounded-sm border border-ink/40 bg-transparent px-4 py-3 text-ink placeholder:text-ink/50 focus:border-ink focus:outline-none"
+          />
+          <button
+            type="submit"
+            class="rounded-sm bg-ink px-6 py-3 font-semibold text-parchment transition-opacity hover:opacity-90"
+            >Join the network</button
+          >
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>

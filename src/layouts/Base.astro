@@ -1,0 +1,94 @@
+---
+import '../styles/global.css';
+import { SITE } from '../config';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  /** path only, e.g. "/" or "/essays/..." */
+  path?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = SITE.tagline,
+  path = '/',
+  image = SITE.ogImage,
+} = Astro.props;
+
+const pageTitle = title
+  ? `${title} — ${SITE.projectName}`
+  : `${SITE.projectName} — ${SITE.bookTitle}`;
+
+const canonical = new URL(path, SITE.url).href;
+const ogImageUrl = new URL(image, SITE.url).href;
+
+// Structured data for search engines + AI (schema.org)
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.projectName,
+      description: SITE.tagline,
+    },
+    {
+      '@type': 'Book',
+      '@id': `${SITE.url}/#book`,
+      name: SITE.bookTitleFull,
+      alternateName: SITE.bookTitle,
+      author: SITE.editors.map((e) => ({ '@type': 'Person', name: e.name })),
+      editor: SITE.editors.map((e) => ({ '@type': 'Person', name: e.name })),
+      publisher: { '@type': 'Organization', name: SITE.publisher },
+      inLanguage: 'en',
+      about: 'Muslim Liberation Theology',
+      ...(SITE.isbn ? { isbn: SITE.isbn } : {}),
+      ...(SITE.publishYear ? { datePublished: SITE.publishYear } : {}),
+      ...(SITE.buyUrl
+        ? { offers: { '@type': 'Offer', url: SITE.buyUrl, availability: 'https://schema.org/InStock' } }
+        : {}),
+    },
+    ...SITE.editors.map((e) => ({
+      '@type': 'Person',
+      name: e.name,
+      jobTitle: e.role,
+    })),
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.projectName} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

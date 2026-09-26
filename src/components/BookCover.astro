@@ -1,0 +1,23 @@
+---
+// Hero book cover — real Wiley cover, framed with the concept's thin gold ring
+// and hard offset shadow. The source file is the full jacket, so object-position
+// "right" shows only the front cover.
+---
+
+<div class="relative mx-auto flex w-full max-w-[420px] items-center justify-center py-12">
+  <!-- gold ring -->
+  <div
+    class="pointer-events-none absolute h-[420px] w-[420px] rounded-full border border-gold/35"
+  >
+  </div>
+
+  <!-- book -->
+  <img
+    src="/cover.png"
+    alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
+    width="290"
+    height="430"
+    class="relative w-[290px] object-cover object-right"
+    style="aspect-ratio: 290 / 430; box-shadow: 0 30px 60px -18px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.08);"
+  />
+</div>

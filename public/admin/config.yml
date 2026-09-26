@@ -1,0 +1,51 @@
+# Decap CMS configuration
+# NOTE: set `repo` to your real GitHub repo once created (username/repo-name).
+backend:
+  name: github
+  repo: esmsaah/muslim-liberation-theology # TODO: update to the exact repo you create
+  branch: main
+
+# Lets you test the CMS locally with `npx decap-server` before auth is wired up.
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "essays"
+    label: "Essays"
+    label_singular: "Essay"
+    folder: "src/content/essays"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Category",
+          name: "tag",
+          widget: "select",
+          options: ["Manifesto", "Debate", "Genealogy", "Essay", "Intervention"],
+          default: "Essay",
+        }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "episodes"
+    label: "Podcast episodes"
+    label_singular: "Episode"
+    folder: "src/content/episodes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "tag", widget: "string", default: "Conversation" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Link (Spotify / YouTube / Apple)", name: "link", widget: "string", required: false }
+      - { label: "Embed code (optional iframe)", name: "embed", widget: "text", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false }
+      - { label: "Notes", name: "body", widget: "markdown", required: false }
