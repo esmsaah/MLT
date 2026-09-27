@@ -12,7 +12,7 @@ export interface Props {
 
 const {
   title,
-  description = SITE.tagline,
+  description = SITE.description,
   path = '/',
   image = SITE.ogImage,
 } = Astro.props;
@@ -33,7 +33,9 @@ const jsonLd = {
       '@id': `${SITE.url}/#website`,
       url: SITE.url,
       name: SITE.projectName,
+      alternateName: ['Islamic Liberation Theology', 'Muslim Liberation Theologies'],
       description: SITE.tagline,
+      keywords: SITE.keywords,
     },
     {
       '@type': 'Book',
@@ -70,6 +72,7 @@ const jsonLd = {
 
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={SITE.keywords} />
     <link rel="canonical" href={canonical} />
 
     <!-- Open Graph -->

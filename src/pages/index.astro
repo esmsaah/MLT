@@ -82,9 +82,23 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
             intellectual histories, and contemporary struggles to confront structures of
             domination and pursue spiritual, social, political, and epistemic liberation.
           </p>
-          <p class="text-base italic text-ink/50">
-            [Placeholder — add more of the real explanation here. 500–1200 words of real text
-            gives the best SEO and AI visibility.]
+          <p>
+            Often described as <strong>Islamic liberation theology</strong>, it is not a Muslim
+            adaptation of Christian models but a distinct framework that emerges from within Muslim
+            experience — shifting attention from abstract religious systems to lived Muslim agency,
+            trusteeship (<em>khilāfa</em>), and the ethical demand of justice (<em>ʿadl</em>).
+          </p>
+          <p>
+            It reads the Qur'an and the Sunna as resources for confronting oppression in its many
+            forms — colonialism and its afterlives, authoritarianism, Islamophobia, racial
+            capitalism, gendered injustice, and the dispossession of peoples, including in Palestine
+            — and for imagining more just alternatives.
+          </p>
+          <p>
+            As a living project, Muslim Liberation Theology brings together scholars, thinkers, and
+            activists across regions and traditions — Sunni and Shiʿi, in both minority and majority
+            contexts — to develop a theology that is at once critically rigorous, spiritually
+            grounded, and oriented toward emancipatory practice.
           </p>
         </div>
       </div>
@@ -92,16 +106,19 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
 
     <!-- ============ THE COMPANION ============ -->
     <section id="companion" class="scroll-mt-20 bg-cream">
-      <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
-        <!-- left: cover on dark panel -->
-        <div class="flex items-center justify-center rounded-sm bg-forest2 px-6 py-16">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
+        <!-- left: cover on a bordo panel (stretches to fill the column height) -->
+        <div
+          class="flex items-center justify-center rounded-sm px-6 py-14"
+          style="background: linear-gradient(160deg, #4a1815 0%, #2a0d0b 100%);"
+        >
           <img
             src="/cover.png"
             alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
-            width="250"
-            height="370"
-            class="w-[250px] object-cover object-right"
-            style="aspect-ratio: 250 / 370; box-shadow: 0 28px 55px -18px rgba(0,0,0,0.7);"
+            width="320"
+            height="474"
+            class="w-full max-w-[320px] object-cover object-right"
+            style="aspect-ratio: 320 / 474; box-shadow: 0 24px 55px -18px rgba(0,0,0,0.6);"
           />
         </div>
 
@@ -222,20 +239,14 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     <!-- ============ ESSAYS ============ -->
     <section id="essays" class="scroll-mt-20 bg-parchment">
       <div class="mx-auto max-w-6xl px-5 py-20">
-        <!-- two-column header -->
-        <div class="grid gap-8 md:grid-cols-2 md:gap-16">
-          <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/60">
-              Ideas in Movement
-            </p>
-            <h2 class="mt-3 font-serif text-4xl leading-tight md:text-5xl">
-              Essays &amp; interventions
-            </h2>
-          </div>
-          <p class="self-end text-lg leading-relaxed text-ink/80">
-            A space in which Muslim Liberation Theology continues to develop through argument,
-            critique, reflection, and engagement with contemporary struggles.
+        <!-- header -->
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/60">
+            Ideas in Movement
           </p>
+          <h2 class="mt-3 font-serif text-4xl leading-tight md:text-5xl">
+            Essays &amp; interventions
+          </h2>
         </div>
 
         <!-- three unboxed columns with colored top rules -->

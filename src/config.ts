@@ -14,6 +14,12 @@ export const SITE = {
   tagline:
     'A living intellectual project that reclaims Islam as a resource for confronting domination and imagining liberation.',
 
+  // SEO meta description (search results + AI). Includes the common synonym.
+  description:
+    'Muslim Liberation Theology (Islamic liberation theology): a living intellectual project and home of The Wiley Blackwell Companion to Muslim Liberation Theologies, edited by Emin Poljarević and Ivan Ejub Kostić. Islam as a resource for justice, dignity, and liberation.',
+  keywords:
+    'Muslim Liberation Theology, Islamic Liberation Theology, liberation theology in Islam, Muslim liberation theologies, Wiley Blackwell Companion, Emin Poljarević, Ivan Ejub Kostić, Islam and social justice, decolonial Islam, Islamic ethics',
+
   // Editors / authors
   editors: [
     { name: 'Emin Poljarevic', role: 'Editor' },
