@@ -33,7 +33,7 @@ const jsonLd = {
       '@id': `${SITE.url}/#website`,
       url: SITE.url,
       name: SITE.projectName,
-      alternateName: ['Islamic Liberation Theology', 'Muslim Liberation Theologies'],
+      alternateName: 'Muslim Liberation Theologies',
       description: SITE.tagline,
       keywords: SITE.keywords,
     },
@@ -47,10 +47,20 @@ const jsonLd = {
       publisher: { '@type': 'Organization', name: SITE.publisher },
       inLanguage: 'en',
       about: 'Muslim Liberation Theology',
+      bookFormat: 'https://schema.org/Hardcover',
+      ...(SITE.numberOfPages ? { numberOfPages: SITE.numberOfPages } : {}),
       ...(SITE.isbn ? { isbn: SITE.isbn } : {}),
       ...(SITE.publishYear ? { datePublished: SITE.publishYear } : {}),
       ...(SITE.buyUrl
-        ? { offers: { '@type': 'Offer', url: SITE.buyUrl, availability: 'https://schema.org/InStock' } }
+        ? {
+            offers: {
+              '@type': 'Offer',
+              url: SITE.buyUrl,
+              price: '205.00',
+              priceCurrency: 'USD',
+              availability: 'https://schema.org/PreOrder',
+            },
+          }
         : {}),
     },
     ...SITE.editors.map((e) => ({

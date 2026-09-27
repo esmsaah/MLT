@@ -14,11 +14,14 @@ export const SITE = {
   tagline:
     'A living intellectual project that reclaims Islam as a resource for confronting domination and imagining liberation.',
 
-  // SEO meta description (search results + AI). Includes the common synonym.
+  // SEO meta description shown in search results (kept about Muslim Liberation Theology
+  // as its own distinct project — no equating it with the older term).
   description:
-    'Muslim Liberation Theology (Islamic liberation theology): a living intellectual project and home of The Wiley Blackwell Companion to Muslim Liberation Theologies, edited by Emin Poljarević and Ivan Ejub Kostić. Islam as a resource for justice, dignity, and liberation.',
+    'Muslim Liberation Theology — a distinct intellectual and theological project reclaiming Islam as a resource for justice, dignity, and liberation. Home of The Wiley Blackwell Companion to Muslim Liberation Theologies, edited by Emin Poljarević and Ivan Ejub Kostić.',
+  // Hidden keyword list only (not visible copy) — helps searches for the older term
+  // surface Muslim Liberation Theology, without stating equivalence anywhere on the page.
   keywords:
-    'Muslim Liberation Theology, Islamic Liberation Theology, liberation theology in Islam, Muslim liberation theologies, Wiley Blackwell Companion, Emin Poljarević, Ivan Ejub Kostić, Islam and social justice, decolonial Islam, Islamic ethics',
+    'Muslim Liberation Theology, Muslim liberation theologies, Islamic liberation theology, liberation theology and Islam, trusteeship, amana, Islam and social justice, liberatory praxis, Sunni and Shia liberation, decolonial Islam, Islamophobia, Palestine, racial capitalism, Wiley Blackwell Companion, Emin Poljarević, Ivan Ejub Kostić',
 
   // Editors / authors
   editors: [
@@ -27,10 +30,12 @@ export const SITE = {
   ],
   publisher: 'Wiley Blackwell',
   isbn: '978-1-394-28248-7', // from the real cover — great for SEO
-  publishYear: '2026',
+  publishYear: '2026-12',
+  numberOfPages: 592,
 
-  // Where to buy / discover the book  (TODO: replace with real link)
-  buyUrl: 'https://www.wiley.com/',
+  // Where to buy / discover the book
+  buyUrl:
+    'https://www.wiley.com/en-us/shop/general-introductory-religion-theology/the-wiley-blackwell-companion-to-muslim-liberation-theologies-p-9781394282487',
 
   // Podcast / MLT Conversations  (TODO: paste embed + platform links when ready)
   podcast: {
