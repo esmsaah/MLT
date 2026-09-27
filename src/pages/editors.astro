@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../config';
+
+const accents = ['bg-brick', 'bg-gold'];
+---
+
+<Base
+  title="Editors"
+  description="The editors of The Wiley Blackwell Companion to Muslim Liberation Theologies — Emin Poljarević (Uppsala University) and Ivan Ejub Kostić (University of Belgrade)."
+  path="/editors"
+>
+  <Nav />
+  <main class="bg-parchment">
+    <section class="mx-auto max-w-4xl px-5 py-16 md:py-24">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/60">The Project</p>
+      <h1 class="mt-3 font-serif text-4xl leading-tight md:text-5xl">The Editors</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink/80">
+        Muslim Liberation Theology is edited and developed by scholars working at the intersection
+        of Islamic thought, ethics, and the study of justice and liberation.
+      </p>
+
+      <div class="mt-14 space-y-12">
+        {
+          SITE.editors.map((e, i) => (
+            <article class="border-t border-ink/15 pt-10">
+              <span class={`block h-1 w-14 ${accents[i % accents.length]}`} />
+              <h2 class="mt-5 font-serif text-3xl leading-tight">{e.name}</h2>
+              {e.affiliation && (
+                <p class="mt-2 text-sm font-medium uppercase tracking-wide text-brick">
+                  {e.affiliation}
+                </p>
+              )}
+              {e.bio && <p class="mt-5 max-w-2xl text-lg leading-relaxed text-ink/85">{e.bio}</p>}
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="mt-16 border-t border-ink/10 pt-8">
+        <a href="/#companion" class="text-sm font-semibold text-brick hover:underline"
+          >Explore the Companion →</a
+        >
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

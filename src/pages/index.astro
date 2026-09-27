@@ -29,10 +29,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     <section class="bg-forest2 text-parchment">
       <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
         <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-            Critical Thought · Spiritual Commitment · Emancipatory Practice
-          </p>
-          <h1 class="mt-6 font-serif text-6xl leading-[0.95] md:text-7xl">
+          <h1 class="font-serif text-6xl leading-[0.95] md:text-7xl">
             Muslim<br />
             <span class="italic text-gold">Liberation</span><br />
             Theology
@@ -88,17 +85,24 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
 
     <!-- ============ THE COMPANION ============ -->
     <section id="companion" class="scroll-mt-20 bg-cream">
-      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
-        <!-- left: cover on the site's brick-red panel (stretches to fill the column height) -->
-        <div class="flex items-center justify-center rounded-sm bg-brick px-6 py-12">
-          <img
-            src="/cover.png"
-            alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
-            width="360"
-            height="533"
-            class="w-full max-w-[360px] object-cover object-right"
-            style="aspect-ratio: 320 / 474;"
-          />
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
+        <!-- left: cover with an offset brick outline frame (not filled) -->
+        <div class="flex justify-center py-4">
+          <div class="relative">
+            <div
+              class="pointer-events-none absolute -bottom-4 -right-4 h-full w-full border-2 border-brick"
+              aria-hidden="true"
+            >
+            </div>
+            <img
+              src="/cover.png"
+              alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
+              width="380"
+              height="563"
+              class="relative block w-[380px] max-w-full object-cover object-right"
+              style="aspect-ratio: 320 / 474;"
+            />
+          </div>
         </div>
 
         <!-- right: heading + endorsements -->

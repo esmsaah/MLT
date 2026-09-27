@@ -25,8 +25,20 @@ export const SITE = {
 
   // Editors / authors
   editors: [
-    { name: 'Emin Poljarevic', role: 'Editor' },
-    { name: 'Ivan Ejub Kostić', role: 'Editor' },
+    {
+      name: 'Emin Poljarević',
+      role: 'Editor',
+      affiliation:
+        'Associate Professor of Islamic Theology and Philosophy, and Sociologist of Religion, Uppsala University',
+      bio: 'Emin Poljarević is Associate Professor in Islamic Theology and Philosophy and a Sociologist of Religion at Uppsala University. He has published widely on Islamic ethics, Muslim social mobilization, Islamophobia in Europe, Malcolm X, and political and liberation theologies.',
+    },
+    {
+      name: 'Ivan Ejub Kostić',
+      role: 'Editor',
+      affiliation:
+        'Research Fellow, Institute for Philosophy and Social Theory, University of Belgrade',
+      bio: 'Ivan Ejub Kostić is a Research Fellow at the Institute for Philosophy and Social Theory, University of Belgrade. He has authored and edited several books on contemporary Islamic political thought, Islamic movements, and Islam in Europe and the Balkans.',
+    },
   ],
   publisher: 'Wiley Blackwell',
   isbn: '978-1-394-28248-7', // from the real cover — great for SEO
@@ -63,10 +75,11 @@ export const SITE = {
 
 // Navigation (anchors on the single-page site)
 export const NAV = [
-  { label: 'What is MLT?', href: '#what-is-mlt' },
-  { label: 'The Companion', href: '#companion' },
-  { label: 'Conversations', href: '#conversations' },
-  { label: 'Essays', href: '#essays' },
+  { label: 'What is MLT?', href: '/#what-is-mlt' },
+  { label: 'The Companion', href: '/#companion' },
+  { label: 'Conversations', href: '/#conversations' },
+  { label: 'Essays', href: '/#essays' },
+  { label: 'Editors', href: '/editors' },
 ];
 
 // Endorsements / blurbs for the Companion section
