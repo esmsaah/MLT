@@ -6,6 +6,13 @@ summary: How suppressed intellectual histories can help open the future of Islam
 draft: false
 ---
 
-*[Placeholder essay — replace with real content.]*
+Long before the language of decolonisation became common, Muslim thinkers were already
+articulating resistance to empire in the idiom of their own tradition. Recovering those voices is
+part of imagining the future of Islamic thought.
 
-Recovering suppressed anticolonial histories can open new futures for Islamic thought.
+This is a placeholder essay — replace it with the real text when ready.
+
+## Suppressed genealogies
+
+The archive of anticolonial Muslim thought is wide and largely unread. Reading it again is itself
+an act of liberation.

@@ -6,17 +6,22 @@ summary: A concise statement of the theological, ethical, and political coordina
 draft: false
 ---
 
-*[Placeholder essay — replace this text with the real content. Everything below the line
-above is the body of the post, written in normal text. The author can edit all of this from
-the admin panel.]*
-
 Muslim Liberation Theology begins from a simple conviction: that the message of Islam speaks
-directly to conditions of domination, injustice, and human suffering.
+directly to conditions of domination, injustice, and human suffering. It reads revelation and the
+Prophetic tradition not as an escape from the world, but as a summons to transform it.
+
+This is a placeholder essay. Replace the text with the real content — the paragraphs, headings,
+and quotations below simply show how a finished essay will look on the page.
 
 ## The theological coordinate
 
-Write here about how revelation and the Prophetic tradition ground a commitment to justice.
+Liberation, in this reading, is grounded in *tawḥīd* — the affirmation that ultimate sovereignty
+belongs to God alone, and therefore to no worldly power that claims to stand in God's place.
+
+> Not simply a theology about liberation, but an Islamic mode of thought and praxis that emerges
+> from within struggles for justice.
 
 ## The political coordinate
 
-Write here about praxis, solidarity, and emancipatory struggle.
+From this foundation follows a commitment to solidarity with the oppressed, and to forms of
+practice that confront domination rather than accommodate it.

@@ -6,6 +6,12 @@ summary: Rethinking Muslim political agency beyond the categories imposed upon i
 draft: false
 ---
 
-*[Placeholder essay — replace with real content.]*
+Muslim political agency is too often forced into a false choice: withdrawal from the world on one
+side, and the pursuit of raw power on the other. This essay argues for a third path.
 
-This essay rethinks Muslim political agency beyond the false choice between withdrawal and power.
+This is a placeholder essay — replace it with the real text when ready.
+
+## Beyond the binary
+
+Between quietism and domination lies a tradition of principled engagement: one that refuses
+injustice without mistaking control for justice.
