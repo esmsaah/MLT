@@ -31,7 +31,7 @@ const accents = ['bg-brick', 'bg-gold'];
                   src={e.photo}
                   alt={e.name}
                   class="w-full max-w-[300px] rounded-sm object-cover"
-                  style={`aspect-ratio: 4 / 5; object-position: ${e.photoPos ?? 'center'}`}
+                  style={`aspect-ratio: 4 / 5; object-position: ${e.photoPos ?? 'center'}${e.photoFilter ? `; filter: ${e.photoFilter}` : ''}`}
                 />
               )}
               <div>
