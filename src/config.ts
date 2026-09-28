@@ -59,7 +59,8 @@ export const SITE = {
     // Paste the <iframe ...> embed code from Spotify/Apple/YouTube here (as a string).
     // Leave empty ('') to show a "coming soon" placeholder instead.
     embedHtml: '',
-    spotifyUrl: '',
+    // TODO: replace with the real Spotify show URL when available
+    spotifyUrl: 'https://open.spotify.com/search/muslim%20liberation%20theology',
     appleUrl: '',
     youtubeUrl: 'https://www.youtube.com/@muslimliberationtheology',
   },

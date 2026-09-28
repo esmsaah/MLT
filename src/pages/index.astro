@@ -44,12 +44,12 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
           </h1>
         </div>
 
-        <!-- Right rail: tagline (top) + edited-by (bottom) -->
-        <div class="flex flex-col md:min-h-[360px]">
+        <!-- Right rail: tagline + edited-by right beneath it -->
+        <div class="flex flex-col md:pt-16">
           <p class="font-serif text-xl italic leading-relaxed" style="color:rgba(242,238,228,.87)">
             {SITE.tagline}
           </p>
-          <div class="mt-8 border-t border-parchment/15 pt-6 md:mt-auto">
+          <div class="mt-7 border-t border-parchment/15 pt-6">
             <p class="text-[10px] font-semibold uppercase tracking-[0.24em] text-parchment/45">
               Edited by
             </p>
@@ -62,7 +62,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     </section>
 
     <!-- ============ STATEMENT (red band) ============ -->
-    <section class="bg-brick text-parchment">
+    <section id="what-is-mlt" class="scroll-mt-20 bg-brick text-parchment">
       <div class="mx-auto max-w-6xl px-5 py-8 md:px-[72px]">
         <p
           class="max-w-[1010px] font-serif text-2xl leading-snug"
@@ -75,45 +75,27 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
       </div>
     </section>
 
-    <!-- ============ WHAT IS MLT ============ -->
-    <section id="what-is-mlt" class="scroll-mt-20 bg-parchment">
-      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
-        <h2 class="font-serif text-4xl leading-tight md:text-5xl">
-          What is Muslim Liberation Theology?
-        </h2>
-        <div class="space-y-6 text-lg leading-relaxed text-ink/85">
-          <p>
-            Muslim Liberation Theology draws upon revelation, the Prophetic tradition, Muslim
-            intellectual histories, and contemporary struggles to confront structures of
-            domination and pursue spiritual, social, political, and epistemic liberation.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ THE COMPANION (redesign) ============ -->
     <section id="companion" class="scroll-mt-20 bg-parchment">
       <div class="mx-auto grid max-w-6xl gap-14 px-5 py-20 md:grid-cols-[minmax(0,460px)_1fr] md:gap-16">
-        <!-- left: real cover on a forest panel, with a Pre-order badge -->
-        <div class="relative flex items-center justify-center py-6">
-          <div
-            class="absolute inset-y-4 left-0 right-8 hidden bg-forest2 md:block"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="relative">
-            <span
-              class="absolute -left-3 bottom-14 z-10 bg-brick px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-parchment"
-              >Pre-order</span
-            >
+        <!-- left: real cover overlapping a forest panel (top-left), with a Pre-order badge -->
+        <div class="relative mx-auto w-full max-w-[460px] md:mx-0">
+          <!-- forest panel, peeking top + left behind the book -->
+          <div class="absolute left-0 top-4 h-[76%] w-[74%] bg-forest2" aria-hidden="true"></div>
+          <!-- book, offset down-right so it overlaps the panel -->
+          <div class="relative ml-auto mt-12 w-[280px] max-w-[80%] md:w-[360px]">
             <img
               src="/cover.png"
               alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
-              width="320"
-              height="474"
-              class="block w-[300px] max-w-full object-cover object-right"
+              width="360"
+              height="533"
+              class="block w-full object-cover object-right"
               style="aspect-ratio: 320 / 474; box-shadow: 0 34px 60px rgba(23,33,27,.42), 0 8px 18px rgba(23,33,27,.22)"
             />
+            <span
+              class="absolute -left-3 bottom-16 z-10 bg-brick px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-parchment"
+              >Pre-order</span
+            >
           </div>
         </div>
 
