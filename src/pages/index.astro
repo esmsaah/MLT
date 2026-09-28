@@ -197,9 +197,9 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
                   <p class="text-xs font-semibold uppercase tracking-[0.15em] text-gold">
                     {c.data.tag}
                   </p>
-                  {SITE.podcast.spotifyUrl || c.data.link ? (
+                  {SITE.podcast.youtubeUrl || c.data.link ? (
                     <a
-                      href={SITE.podcast.spotifyUrl || c.data.link}
+                      href={SITE.podcast.youtubeUrl || c.data.link}
                       target="_blank"
                       rel="noopener"
                       class="mt-1 block font-serif text-xl text-parchment hover:text-gold"
