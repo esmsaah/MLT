@@ -18,6 +18,75 @@ body {
   color: theme('colors.ink');
 }
 
+/* ===== Hero dove animation (the dot of the "i" in Liberation) ===== */
+.dk a:hover {
+  color: #c9a85e;
+}
+.wing {
+  transform-box: fill-box;
+  transform: scale(0);
+}
+.wl {
+  transform-origin: right bottom;
+}
+.wr {
+  transform-origin: left bottom;
+}
+.home {
+  opacity: 0;
+}
+@keyframes fly {
+  0%, 14% { transform: translate(0, 0); opacity: 1; }
+  40% { transform: translate(4px, -34px); opacity: 1; }
+  70% { transform: translate(10px, -90px); opacity: 0.9; }
+  100% { transform: translate(16px, -160px); opacity: 0; }
+}
+@keyframes wings {
+  0%, 4% { transform: scale(0); }
+  14% { transform: scale(1); }
+  24% { transform: scale(1, -0.6); }
+  34% { transform: scale(1); }
+  46% { transform: scale(1, -0.6); }
+  58% { transform: scale(1); }
+  72% { transform: scale(1, -0.6); }
+  86%, 100% { transform: scale(1); }
+}
+@keyframes home {
+  0%, 72% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fly2 {
+  0%, 14% { transform: translate(0, 0); opacity: 1; }
+  40% { transform: translate(4px, -34px); opacity: 1; }
+  70% { transform: translate(10px, -90px); opacity: 0.9; }
+  100% { transform: translate(16px, -160px); opacity: 0; }
+}
+@keyframes wings2 {
+  0%, 4% { transform: scale(0); }
+  14% { transform: scale(1); }
+  24% { transform: scale(1, -0.6); }
+  34% { transform: scale(1); }
+  46% { transform: scale(1, -0.6); }
+  58% { transform: scale(1); }
+  72% { transform: scale(1, -0.6); }
+  86%, 100% { transform: scale(1); }
+}
+@keyframes home2 {
+  0%, 72% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.auto .flight { animation: fly 3.6s cubic-bezier(0.45, 0, 0.35, 1) 1.2s both; }
+.auto .wing { animation: wings 3.6s linear 1.2s both; }
+.auto .home { animation: home 5s ease 1.2s both; }
+.replay:hover .flight { animation: fly2 3.6s cubic-bezier(0.45, 0, 0.35, 1) 0s both; }
+.replay:hover .wing { animation: wings2 3.6s linear 0s both; }
+.replay:hover .home { animation: home2 5s ease 0s both; }
+@media (prefers-reduced-motion: reduce) {
+  .flight, .wing, .home { animation: none !important; }
+  .wing { transform: scale(0); }
+  .home { opacity: 1; }
+}
+
 /* ============================================================
    Long-form reading experience for a single essay (/essays/…)
    Georgia serif, generous measure, restrained editorial touches.
