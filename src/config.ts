@@ -28,6 +28,8 @@ export const SITE = {
     {
       name: 'Emin Poljarević',
       role: 'Editor',
+      photo: '/emin.png',
+      photoPos: 'center 20%',
       affiliation:
         'Associate Professor of Islamic Theology and Philosophy, and Sociologist of Religion, Uppsala University',
       bio: 'Emin Poljarević is Associate Professor in Islamic Theology and Philosophy and a Sociologist of Religion at Uppsala University. He has published widely on Islamic ethics, Muslim social mobilization, Islamophobia in Europe, Malcolm X, and political and liberation theologies.',
@@ -35,6 +37,8 @@ export const SITE = {
     {
       name: 'Ivan Ejub Kostić',
       role: 'Editor',
+      photo: '/ejub.jpg',
+      photoPos: '60% 30%',
       affiliation:
         'Research Fellow, Institute for Philosophy and Social Theory, University of Belgrade',
       bio: 'Ivan Ejub Kostić is a Research Fellow at the Institute for Philosophy and Social Theory, University of Belgrade. He has authored and edited several books on contemporary Islamic political thought, Islamic movements, and Islam in Europe and the Balkans.',

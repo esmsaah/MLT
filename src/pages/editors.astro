@@ -22,18 +22,28 @@ const accents = ['bg-brick', 'bg-gold'];
         of Islamic thought, ethics, and the study of justice and liberation.
       </p>
 
-      <div class="mt-14 space-y-12">
+      <div class="mt-14 space-y-14">
         {
           SITE.editors.map((e, i) => (
-            <article class="border-t border-ink/15 pt-10">
-              <span class={`block h-1 w-14 ${accents[i % accents.length]}`} />
-              <h2 class="mt-5 font-serif text-3xl leading-tight">{e.name}</h2>
-              {e.affiliation && (
-                <p class="mt-2 text-sm font-medium uppercase tracking-wide text-brick">
-                  {e.affiliation}
-                </p>
+            <article class="grid gap-8 border-t border-ink/15 pt-10 md:grid-cols-[300px_1fr] md:gap-12">
+              {e.photo && (
+                <img
+                  src={e.photo}
+                  alt={e.name}
+                  class="w-full max-w-[300px] rounded-sm object-cover"
+                  style={`aspect-ratio: 4 / 5; object-position: ${e.photoPos ?? 'center'}`}
+                />
               )}
-              {e.bio && <p class="mt-5 max-w-2xl text-lg leading-relaxed text-ink/85">{e.bio}</p>}
+              <div>
+                <span class={`block h-1 w-14 ${accents[i % accents.length]}`} />
+                <h2 class="mt-5 font-serif text-3xl leading-tight">{e.name}</h2>
+                {e.affiliation && (
+                  <p class="mt-2 text-sm font-medium uppercase tracking-wide text-brick">
+                    {e.affiliation}
+                  </p>
+                )}
+                {e.bio && <p class="mt-5 text-lg leading-relaxed text-ink/85">{e.bio}</p>}
+              </div>
             </article>
           ))
         }

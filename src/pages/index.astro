@@ -32,37 +32,12 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
         <!-- Giant title with the flying-dove "i" + What is MLT? link beneath -->
         <div class="flex flex-col">
           <h1
-          class="auto replay font-serif"
-          style="margin:0; font-weight:400; line-height:.9; letter-spacing:-.03em; font-size:clamp(3rem,11vw,150px)"
-        >
-          Muslim<br />
-          <span style="font-style:italic;color:#C9A85E;white-space:nowrap"
-            >Liberat<span style="position:relative;display:inline-block;line-height:1"
-              >ı<svg
-                viewBox="-14 -10 28 20"
-                aria-hidden="true"
-                style="position:absolute;left:.24em;top:.17em;width:.48em;height:.34em;transform:translate(-50%,-50%);overflow:visible"
-                ><circle class="home" r="3.8" fill="#C9A85E"></circle><g class="flight"
-                  ><path
-                    class="wing wl"
-                    d="M-2.5 -0.5 Q-7 -6 -13 -4.5"
-                    fill="none"
-                    stroke="#C9A85E"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path><path
-                    class="wing wr"
-                    d="M2.5 -0.5 Q7 -6 13 -4.5"
-                    fill="none"
-                    stroke="#C9A85E"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path><circle r="3.8" fill="#C9A85E"></circle></g
-                ></svg
-              >on</span
-            ></span
-          ><br />
-          Theology
+            class="font-serif"
+            style="margin:0; font-weight:400; line-height:.9; letter-spacing:-.03em; font-size:clamp(3rem,11vw,150px)"
+          >
+            Muslim<br />
+            <span style="font-style:italic;color:#C9A85E">Liberation</span><br />
+            Theology
           </h1>
           <a
             href="/#what-is-mlt"
@@ -135,15 +110,15 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     <!-- ============ THE COMPANION ============ -->
     <section id="companion" class="scroll-mt-20 bg-cream">
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
-        <!-- left: cover, plain with a soft shadow (matches the design — no frame) -->
-        <div class="flex justify-center py-4">
+        <!-- left: cover — large, clean, no frame or shadow -->
+        <div class="flex justify-center">
           <img
             src="/cover.png"
             alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
-            width="360"
-            height="533"
-            class="block w-[360px] max-w-full object-cover object-right"
-            style="aspect-ratio: 320 / 474; box-shadow: 0 24px 50px rgba(15,23,18,.18)"
+            width="460"
+            height="681"
+            class="block w-full max-w-[460px] object-cover object-right"
+            style="aspect-ratio: 320 / 474"
           />
         </div>
 
@@ -195,7 +170,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
                 <div set:html={featured.data.embed} />
               ) : (
                 <a
-                  href={featured?.data.link || SITE.podcast.youtubeUrl || '#'}
+                  href={SITE.podcast.youtubeUrl || featured?.data.link || '#'}
                   target="_blank"
                   rel="noopener"
                   class="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-sm p-8"
@@ -228,9 +203,9 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
                   <p class="text-xs font-semibold uppercase tracking-[0.15em] text-gold">
                     {c.data.tag}
                   </p>
-                  {c.data.link ? (
+                  {SITE.podcast.spotifyUrl || c.data.link ? (
                     <a
-                      href={c.data.link}
+                      href={SITE.podcast.spotifyUrl || c.data.link}
                       target="_blank"
                       rel="noopener"
                       class="mt-1 block font-serif text-xl text-parchment hover:text-gold"
@@ -246,18 +221,22 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
           </ul>
         </div>
 
-        {
-          SITE.podcast.youtubeUrl && (
-            <a
-              href={SITE.podcast.youtubeUrl}
-              target="_blank"
-              rel="noopener"
-              class="mt-10 inline-flex items-center gap-2 font-semibold text-gold hover:underline"
-            >
-              View the channel on YouTube →
-            </a>
-          )
-        }
+        <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-semibold text-gold">
+          {
+            SITE.podcast.youtubeUrl && (
+              <a href={SITE.podcast.youtubeUrl} target="_blank" rel="noopener" class="hover:underline">
+                Watch on YouTube →
+              </a>
+            )
+          }
+          {
+            SITE.podcast.spotifyUrl && (
+              <a href={SITE.podcast.spotifyUrl} target="_blank" rel="noopener" class="hover:underline">
+                Listen on Spotify →
+              </a>
+            )
+          }
+        </div>
       </div>
     </section>
 
