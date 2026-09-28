@@ -94,6 +94,7 @@ export const ENDORSEMENTS = [
       'The Companion is unparalleled in its scope and depth and will remain the standard reference work on Muslim liberation theologies for the foreseeable future.',
     name: 'Asma Afsaruddin',
     title: 'Professor of Middle Eastern Languages and Cultures, Indiana University',
+    org: 'Indiana University',
   },
   {
     quote:
@@ -101,17 +102,20 @@ export const ENDORSEMENTS = [
     name: 'Jonathan Brown',
     title:
       'Professor and Alwaleed bin Talal Chair of Islamic Civilization, Georgetown University',
+    org: 'Georgetown University',
   },
   {
     quote:
       'The most rigorous exploration in the topic so far. This is a must read across humanities, as well as religious studies.',
     name: 'Heba Raouf Ezzat',
     title: 'Assistant Professor of Political Science, Ibn Haldun University',
+    org: 'Ibn Haldun University',
   },
   {
     quote:
       'With thirty contributions encompassing multiple subjects and addressing the world’s diverse regions, it is thematically fascinating, methodologically gripping, and intellectually engaging.',
     name: 'Irfan Ahmad',
     title: 'Professor of Anthropology and Sociology, Ibn Haldun University',
+    org: 'Ibn Haldun University',
   },
 ];

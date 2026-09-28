@@ -24,69 +24,53 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
   <Nav />
 
   <main>
-    <!-- ============ HERO (direction A) ============ -->
-    <section id="top" class="dk bg-forest2 text-parchment">
+    <!-- ============ HERO (redesign) ============ -->
+    <section id="top" class="dk text-parchment" style="background:#1B2620">
       <div
-        class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 md:grid-cols-[1fr_300px] md:gap-16 md:py-12"
+        class="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1fr_360px] md:gap-20 md:py-20"
       >
-        <!-- Giant title with the flying-dove "i" + What is MLT? link beneath -->
-        <div class="flex flex-col">
+        <!-- Title -->
+        <div>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold">
+            Thought &amp; Praxis
+          </p>
           <h1
-            class="font-serif"
-            style="margin:0; font-weight:400; line-height:.9; letter-spacing:-.03em; font-size:clamp(3rem,11vw,150px)"
+            class="mt-6 font-serif"
+            style="margin:0; font-weight:400; line-height:.905; letter-spacing:-.035em; font-size:clamp(3rem,10vw,126px)"
           >
             Muslim<br />
             <span style="font-style:italic;color:#C9A85E">Liberation</span><br />
             Theology
           </h1>
-          <a
-            href="/#what-is-mlt"
-            class="mt-10 inline-block self-start font-semibold text-parchment underline underline-offset-[6px] transition-colors hover:text-gold"
-            style="text-decoration-color: rgba(242,238,228,.45)"
-            >What is MLT?</a
-          >
         </div>
 
-        <!-- Right column: tagline (above), cover, button (below) -->
-        <div class="flex w-full max-w-[300px] flex-col gap-6 md:mx-auto">
-          <p
-            class="font-serif text-lg italic leading-relaxed"
-            style="color:rgba(242,238,228,.86)"
-          >
+        <!-- Right rail: tagline (top) + edited-by (bottom) -->
+        <div class="flex flex-col md:min-h-[360px]">
+          <p class="font-serif text-xl italic leading-relaxed" style="color:rgba(242,238,228,.87)">
             {SITE.tagline}
           </p>
-          <a
-            href={SITE.buyUrl}
-            target="_blank"
-            rel="noopener"
-            aria-label="The Wiley Blackwell Companion to Muslim Liberation Theologies on Wiley"
-            style="box-shadow:0 30px 60px rgba(0,0,0,.35), 0 0 0 1px rgba(242,238,228,.14)"
-          >
-            <img
-              src="/cover.png"
-              alt="The Wiley Blackwell Companion to Muslim Liberation Theologies, front cover"
-              width="300"
-              height="426"
-              class="block w-full object-cover object-right"
-              style="aspect-ratio:300/426"
-            />
-          </a>
-          <a
-            class="btn self-start rounded-sm bg-brick px-6 py-3 font-semibold text-parchment transition-opacity hover:opacity-90"
-            href={SITE.buyUrl}
-            target="_blank"
-            rel="noopener">Explore the Companion</a
-          >
+          <div class="mt-8 border-t border-parchment/15 pt-6 md:mt-auto">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.24em] text-parchment/45">
+              Edited by
+            </p>
+            <p class="mt-2 font-serif text-lg leading-snug text-parchment/85">
+              Emin Poljarević<br />Ivan Ejub Kostić
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============ STATEMENT (red band) ============ -->
-    <section class="bg-brick text-white">
-      <div class="mx-auto max-w-5xl px-5 py-16 md:py-20">
-        <p class="font-serif text-3xl leading-snug md:text-4xl">
-          Not simply a theology <span class="italic">about</span> liberation, but an Islamic mode
-          of thought and praxis that emerges <span class="italic">from within</span> struggles for justice.
+    <section class="bg-brick text-parchment">
+      <div class="mx-auto max-w-6xl px-5 py-8 md:px-[72px]">
+        <p
+          class="max-w-[1010px] font-serif text-2xl leading-snug"
+          style="letter-spacing:-.005em;color:rgba(242,238,228,.95)"
+        >
+          Not simply a theology <em style="font-style:italic;color:#F7E9C9">about</em> liberation,
+          but an Islamic mode of thought and praxis that emerges from
+          <em style="font-style:italic;color:#F7E9C9">within</em> struggles for justice.
         </p>
       </div>
     </section>
@@ -107,45 +91,73 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
       </div>
     </section>
 
-    <!-- ============ THE COMPANION ============ -->
-    <section id="companion" class="scroll-mt-20 bg-cream">
-      <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
-        <!-- left: cover — large, clean, no frame or shadow -->
-        <div class="flex justify-center">
-          <img
-            src="/cover.png"
-            alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
-            width="460"
-            height="681"
-            class="block w-full max-w-[460px] object-cover object-right"
-            style="aspect-ratio: 320 / 474"
-          />
+    <!-- ============ THE COMPANION (redesign) ============ -->
+    <section id="companion" class="scroll-mt-20 bg-parchment">
+      <div class="mx-auto grid max-w-6xl gap-14 px-5 py-20 md:grid-cols-[minmax(0,460px)_1fr] md:gap-16">
+        <!-- left: real cover on a forest panel, with a Pre-order badge -->
+        <div class="relative flex items-center justify-center py-6">
+          <div
+            class="absolute inset-y-4 left-0 right-8 hidden bg-forest2 md:block"
+            aria-hidden="true"
+          >
+          </div>
+          <div class="relative">
+            <span
+              class="absolute -left-3 bottom-14 z-10 bg-brick px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-parchment"
+              >Pre-order</span
+            >
+            <img
+              src="/cover.png"
+              alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
+              width="320"
+              height="474"
+              class="block w-[300px] max-w-full object-cover object-right"
+              style="aspect-ratio: 320 / 474; box-shadow: 0 34px 60px rgba(23,33,27,.42), 0 8px 18px rgba(23,33,27,.22)"
+            />
+          </div>
         </div>
 
-        <!-- right: heading + endorsements -->
-        <div>
-          <h2 class="font-serif text-5xl md:text-6xl">The Companion</h2>
+        <!-- right: kicker, heading, meta, quotes, CTAs -->
+        <div class="md:pt-10">
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-brick">The Companion</p>
+          <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">
+            The standard reference work on Muslim liberation theologies.
+          </h2>
+          <p class="mt-4 text-sm uppercase tracking-wide text-ink/55">
+            592 pages · 30 contributions · Wiley Blackwell · December 2026
+          </p>
+
           <div class="mt-8 divide-y divide-ink/15 border-t border-ink/15">
             {
               ENDORSEMENTS.map((e) => (
-                <figure class="py-6">
-                  <blockquote class="font-serif text-lg leading-relaxed text-ink">
+                <figure class="py-4">
+                  <blockquote class="font-serif text-lg italic leading-snug text-ink/90">
                     “{e.quote}”
                   </blockquote>
-                  <figcaption class="mt-3 text-sm text-ink/60">
-                    <span class="font-semibold text-brick">{e.name}</span>{`, ${e.title}`}
+                  <figcaption class="mt-2 text-xs uppercase tracking-wide text-ink/50">
+                    {e.name} · {e.org ?? e.title}
                   </figcaption>
                 </figure>
               ))
             }
           </div>
-          <a
-            href={SITE.buyUrl}
-            target="_blank"
-            rel="noopener"
-            class="mt-6 inline-block font-semibold text-brick hover:underline"
-            >Discover the book →</a
-          >
+
+          <div class="mt-8 flex flex-wrap items-center gap-6">
+            <a
+              href={SITE.buyUrl}
+              target="_blank"
+              rel="noopener"
+              class="rounded-sm bg-brick px-6 py-3 font-semibold text-parchment transition-opacity hover:opacity-90"
+              >Pre-order the Companion</a
+            >
+            <a
+              href={SITE.buyUrl}
+              target="_blank"
+              rel="noopener"
+              class="border-b border-ink/25 pb-1 font-semibold text-ink/60 hover:text-brick"
+              >Read the introduction</a
+            >
+          </div>
         </div>
       </div>
     </section>
