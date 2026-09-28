@@ -27,7 +27,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     <!-- ============ HERO (direction A) ============ -->
     <section id="top" class="dk bg-forest2 text-parchment">
       <div
-        class="mx-auto grid max-w-6xl items-center gap-14 px-5 py-20 md:min-h-[760px] md:grid-cols-[1fr_300px] md:gap-16 md:py-24"
+        class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-14 md:grid-cols-[1fr_300px] md:gap-16 md:py-16"
       >
         <!-- Giant title with the flying-dove "i" + What is MLT? link beneath -->
         <div class="flex flex-col">
@@ -135,23 +135,16 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     <!-- ============ THE COMPANION ============ -->
     <section id="companion" class="scroll-mt-20 bg-cream">
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
-        <!-- left: cover with an offset brick outline frame (not filled) -->
+        <!-- left: cover, plain with a soft shadow (matches the design — no frame) -->
         <div class="flex justify-center py-4">
-          <div class="relative">
-            <div
-              class="pointer-events-none absolute -bottom-4 -right-4 h-full w-full border-2 border-brick"
-              aria-hidden="true"
-            >
-            </div>
-            <img
-              src="/cover.png"
-              alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
-              width="380"
-              height="563"
-              class="relative block w-[380px] max-w-full object-cover object-right"
-              style="aspect-ratio: 320 / 474;"
-            />
-          </div>
+          <img
+            src="/cover.png"
+            alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
+            width="360"
+            height="533"
+            class="block w-[360px] max-w-full object-cover object-right"
+            style="aspect-ratio: 320 / 474; box-shadow: 0 24px 50px rgba(15,23,18,.18)"
+          />
         </div>
 
         <!-- right: heading + endorsements -->
