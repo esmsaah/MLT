@@ -31,11 +31,8 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
       >
         <!-- Title -->
         <div>
-          <p class="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold">
-            Thought &amp; Praxis
-          </p>
           <h1
-            class="mt-6 font-serif"
+            class="font-serif"
             style="margin:0; font-weight:400; line-height:.905; letter-spacing:-.035em; font-size:clamp(3rem,10vw,126px)"
           >
             Muslim<br />
@@ -44,19 +41,15 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
           </h1>
         </div>
 
-        <!-- Right rail: tagline + edited-by right beneath it -->
-        <div class="flex flex-col md:pt-16">
-          <p class="font-serif text-xl italic leading-relaxed" style="color:rgba(242,238,228,.87)">
-            {SITE.tagline}
+        <!-- Right: tagline, aligned to the bottom of the title on desktop -->
+        <div class="md:self-end md:mb-[6px]">
+          <p
+            class="font-serif"
+            style="font-size:clamp(20px,1.75vw,25px);line-height:1.36;letter-spacing:-.005em;color:rgba(242,238,228,.9);text-wrap:pretty"
+          >
+            A living intellectual project that reclaims Islam as a resource for confronting
+            domination and <em style="font-style:italic;color:#C9A85E">imagining liberation.</em>
           </p>
-          <div class="mt-7 border-t border-parchment/15 pt-6">
-            <p class="text-[10px] font-semibold uppercase tracking-[0.24em] text-parchment/45">
-              Edited by
-            </p>
-            <p class="mt-2 font-serif text-lg leading-snug text-parchment/85">
-              Emin Poljarević<br />Ivan Ejub Kostić
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -76,37 +69,27 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     </section>
 
     <!-- ============ THE COMPANION (redesign) ============ -->
-    <section id="companion" class="relative scroll-mt-20 bg-parchment">
-      <!-- full-bleed forest panel anchored to the LEFT SCREEN EDGE, like the design -->
-      <div
-        class="pointer-events-none absolute left-0 top-20 hidden h-[400px] w-[440px] bg-forest2 md:block"
-        aria-hidden="true"
-      >
-      </div>
-
-      <div class="relative mx-auto grid max-w-6xl gap-14 px-5 py-20 md:grid-cols-[440px_1fr] md:gap-16">
-        <!-- book overlaps the panel; its shadow falls mostly on the dark panel (no light halo) -->
-        <div class="flex justify-center md:block">
-          <div class="relative w-[300px] max-w-[82%] md:ml-12 md:mt-14 md:w-[380px]">
-            <img
-              src="/cover.png"
-              alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
-              width="380"
-              height="563"
-              class="block w-full object-cover object-right"
-              style="aspect-ratio: 320 / 474; box-shadow: 0 34px 60px rgba(23,33,27,.42), 0 8px 18px rgba(23,33,27,.22)"
-            />
-            <span
-              class="absolute -left-4 bottom-16 z-10 bg-brick px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-parchment"
-              >Pre-order</span
-            >
-          </div>
+    <section id="companion" class="scroll-mt-20 bg-parchment">
+      <div class="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 md:grid-cols-[485px_1fr] md:items-start md:gap-16">
+        <!-- cover, sized to span the height of the text block on desktop -->
+        <div class="relative mx-auto w-full max-w-[360px] md:mx-0 md:w-[485px] md:max-w-none">
+          <img
+            src="/cover.png"
+            alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
+            width="485"
+            height="689"
+            class="block w-full object-cover object-right md:mt-2 md:h-[689px]"
+            style="aspect-ratio: 485 / 689"
+          />
+          <span
+            class="absolute -left-4 bottom-16 z-10 bg-brick px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-parchment"
+            >Pre-order</span
+          >
         </div>
 
-        <!-- right: kicker, heading, meta, quotes, CTAs -->
-        <div class="md:pt-10">
-          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-brick">The Companion</p>
-          <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">
+        <!-- right: heading, meta, quotes, CTAs -->
+        <div>
+          <h2 class="font-serif text-4xl leading-tight md:text-5xl">
             The standard reference work on Muslim liberation theologies.
           </h2>
           <p class="mt-4 text-sm uppercase tracking-wide text-ink/55">
@@ -151,10 +134,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     <!-- ============ CONVERSATIONS / PODCAST ============ -->
     <section id="conversations" class="scroll-mt-20 bg-forest text-parchment">
       <div class="mx-auto max-w-6xl px-5 py-20">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-          Watch · Listen · Think
-        </p>
-        <h2 class="mt-4 font-serif text-4xl md:text-5xl">MLT Conversations</h2>
+        <h2 class="font-serif text-4xl md:text-5xl">MLT Conversations</h2>
         <p class="mt-6 max-w-2xl text-lg text-parchment/80">
           The audiovisual journal of the project: sustained conversations with scholars, thinkers,
           and activists on Islam, liberation, decoloniality, and emancipatory praxis.
@@ -279,10 +259,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
         <!-- left: heading + intro -->
         <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/70">
-            The MLT Network
-          </p>
-          <h2 class="mt-4 font-serif text-4xl leading-[1.1] md:text-6xl">
+          <h2 class="font-serif text-4xl leading-[1.1] md:text-6xl">
             A field is built through conversation.
           </h2>
           <p class="mt-6 max-w-md text-lg text-ink/80">
