@@ -38,8 +38,7 @@ export const SITE = {
       name: 'Ivan Ejub Kostić',
       role: 'Editor',
       photo: '/ejub.jpg',
-      photoPos: '34% 42%',
-      photoFilter: 'saturate(0.82) brightness(1.05)',
+      photoPos: '50% 42%',
       affiliation:
         'Research Fellow, Institute for Philosophy and Social Theory, University of Belgrade',
       bio: 'Ivan Ejub Kostić is a Research Fellow at the Institute for Philosophy and Social Theory, University of Belgrade. He has authored and edited several books on contemporary Islamic political thought, Islamic movements, and Islam in Europe and the Balkans.',
