@@ -1,6 +1,6 @@
 ---
 title: Neither quietism nor domination
-tag: Debate
+tag: MLT in Motion
 date: 2026-02-10
 summary: Rethinking Muslim political agency beyond the categories imposed upon it.
 draft: false

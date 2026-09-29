@@ -1,6 +1,6 @@
 ---
 title: Recovering anticolonial Muslim thought
-tag: Genealogy
+tag: Method
 date: 2026-03-05
 summary: How suppressed intellectual histories can help open the future of Islamic thought.
 draft: false

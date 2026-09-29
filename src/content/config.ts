@@ -5,7 +5,7 @@ const essays = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    tag: z.string().default('Essay'), // e.g. Manifesto, Debate, Genealogy
+    tag: z.string().default('Essay'), // e.g. Manifesto, MLT in Motion, Method
     date: z.coerce.date(),
     summary: z.string(),
     cover: z.string().optional(),
