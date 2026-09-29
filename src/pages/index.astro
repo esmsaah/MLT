@@ -72,14 +72,13 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     <section id="companion" class="scroll-mt-20 bg-parchment">
       <div class="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 md:grid-cols-[485px_1fr] md:items-stretch md:gap-16">
         <!-- cover, auto-stretched to match the height of the text block on desktop -->
-        <div class="relative mx-auto w-full max-w-[360px] md:mx-0 md:h-full md:w-[485px] md:max-w-none">
+        <div class="relative mx-auto w-full max-w-[360px] md:mx-0 md:h-[calc(100%+24px)] md:-translate-y-6 md:w-[485px] md:max-w-none">
           <img
             src="/cover.png"
             alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
             width="485"
             height="689"
             class="block w-full object-cover object-right md:absolute md:inset-0 md:h-full md:w-full"
-            style="aspect-ratio: 485 / 689"
           />
           <span
             class="absolute -left-4 bottom-16 z-10 bg-brick px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-parchment"

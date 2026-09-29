@@ -27,12 +27,14 @@ const accents = ['bg-brick', 'bg-gold'];
           SITE.editors.map((e, i) => (
             <article class="grid gap-8 border-t border-ink/15 pt-10 md:grid-cols-[300px_1fr] md:gap-12">
               {e.photo && (
-                <img
-                  src={e.photo}
-                  alt={e.name}
-                  class="w-full max-w-[300px] rounded-sm object-cover"
-                  style={`aspect-ratio: 4 / 5; object-position: ${e.photoPos ?? 'center'}${e.photoFilter ? `; filter: ${e.photoFilter}` : ''}`}
-                />
+                <div class="w-full max-w-[300px] overflow-hidden rounded-sm aspect-[4/5]">
+                  <img
+                    src={e.photo}
+                    alt={e.name}
+                    class={`h-full w-full object-cover ${i === 1 ? 'scale-[1.35]' : ''}`}
+                    style={`object-position: ${e.photoPos ?? 'center'}${e.photoFilter ? `; filter: ${e.photoFilter}` : ''}`}
+                  />
+                </div>
               )}
               <div>
                 <span class={`block h-1 w-14 ${accents[i % accents.length]}`} />
