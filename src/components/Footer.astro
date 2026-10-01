@@ -11,7 +11,13 @@ const year = new Date().getFullYear();
         <p class="font-serif text-lg text-parchment">Muslim Liberation Theology</p>
         <p class="mt-1 text-sm">Founded by {editors}</p>
       </div>
-      <p class="text-sm">© {year} Muslim Liberation Theology. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a
+          href="/editors"
+          class="text-sm text-muted transition-colors hover:text-parchment"
+        >Editors</a>
+        <p class="text-sm">© {year} Muslim Liberation Theology. All rights reserved.</p>
+      </div>
     </div>
   </div>
 </footer>

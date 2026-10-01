@@ -4,6 +4,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 88px;
+  }
 }
 
 body {
@@ -16,6 +23,37 @@ body {
 ::selection {
   background: theme('colors.gold');
   color: theme('colors.ink');
+}
+
+/* ===== Homepage hero layout ===== */
+
+.hero-inner {
+  width: min(1152px, calc(100% - 40px));
+  margin: auto;
+  height: 530px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 80px;
+  padding: 0;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .hero-inner {
+    width: calc(100% - 40px);
+    height: auto;
+    display: block;
+    padding: 56px 0;
+  }
+
+  .hero-inner > :nth-child(2) {
+    margin-top: 32px;
+  }
+
+  .hero-inner > * {
+    min-width: 0;
+    max-width: 100%;
+  }
 }
 
 /* ===== Hero dove animation (the dot of the "i" in Liberation) ===== */
@@ -85,9 +123,20 @@ body {
   0%, 10% { transform: translate(0, 0); opacity: 1; }
   100% { transform: translate(40px, -60px); opacity: 0; }
 }
-.lg:hover .flight { animation: hfly 1.8s cubic-bezier(0.45, 0, 0.35, 1) 0s both; }
-.lg:hover .wing { animation: wings2 1.8s linear 0s both; }
-.lg:hover .home { animation: home2 2.6s ease 0s both; }
+.lg:hover .flight,
+.lg.is-flying .flight {
+  animation: hfly 1.8s cubic-bezier(0.45, 0, 0.35, 1) 0s both;
+}
+
+.lg:hover .wing,
+.lg.is-flying .wing {
+  animation: wings2 1.8s linear 0s both;
+}
+
+.lg:hover .home,
+.lg.is-flying .home {
+  animation: home2 2.6s ease 0s both;
+}
 @media (prefers-reduced-motion: reduce) {
   .flight, .wing, .home { animation: none !important; }
   .wing { transform: scale(0); }

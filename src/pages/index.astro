@@ -26,18 +26,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
   <main>
             <!-- ============ HERO (redesign) ============ -->
     <section id="top" class="dk text-parchment" style="background:#1B2620">
-      <div
-        style="
-          width:min(1152px,calc(100% - 40px));
-          margin:auto;
-          height:530px;
-          display:grid;
-          grid-template-columns:minmax(0,1fr) 380px;
-          gap:80px;
-          padding:0;
-          align-items:center;
-        "
-      >
+      <div class="hero-inner">
         <!-- Title -->
         <div>
           <h1
@@ -179,21 +168,8 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
 
 <!-- ============ STATEMENT (red band) ============ -->
     <section id="what-is-mlt" class="bg-brick text-parchment">
-      <div
-        style="
-          width:min(1152px,calc(100% - 40px));
-          margin:auto;
-          padding:48px 0;
-        "
-      >
-        <div
-          class="mlt-quotes-grid"
-          style="
-            display:grid;
-            grid-template-columns:330px 330px minmax(0,1fr);
-            column-gap:56px;
-          "
-        >
+      <div class="mlt-quotes-wrap">
+        <div class="mlt-quotes-grid">
 
           <!-- Quote 1 -->
           <figure
@@ -367,36 +343,148 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
       </div>
 
       <style>
-        @media (max-width: 767px) {
-          #what-is-mlt > div {
-            padding-top:40px !important;
-            padding-bottom:40px !important;
+        /* Desktop: preserve the existing composition */
+        @media (min-width: 768px) {
+          #what-is-mlt .mlt-quotes-wrap {
+            width: min(1152px, calc(100% - 40px));
+            margin: auto;
+            padding: 48px 0;
           }
 
           #what-is-mlt .mlt-quotes-grid {
-            display:flex !important;
-            flex-direction:column !important;
-            gap:40px !important;
+            display: grid;
+            grid-template-columns: 330px 330px minmax(0, 1fr);
+            column-gap: 56px;
+          }
+        }
+
+        /* Mobile */
+        @media (max-width: 767px) {
+          #what-is-mlt {
+            background: transparent !important;
+            padding: 0 !important;
+          }
+
+          #what-is-mlt .mlt-quotes-wrap {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+
+          #what-is-mlt .mlt-quotes-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0 !important;
+            width: 100% !important;
+          }
+
+          #what-is-mlt figure {
+            box-sizing: border-box;
+            width: 100%;
+            margin: 0 !important;
+            padding: 48px 24px 44px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0 !important;
+          }
+
+          #what-is-mlt figure:nth-child(1),
+          #what-is-mlt figure:nth-child(3) {
+            background: #9F2E26;
+            color: #F2EEE4;
+          }
+
+          #what-is-mlt figure:nth-child(2) {
+            background: #F2EEE4;
+            color: #17211B;
           }
 
           #what-is-mlt blockquote {
-            font-size:17px !important;
+            margin: 0 0 16px !important;
+            padding: 0 !important;
+            font-family: Georgia, Cambria, "Times New Roman", serif !important;
+            font-size: 21px !important;
+            line-height: 1.36 !important;
+            letter-spacing: -0.005em !important;
+            text-wrap: pretty;
+            text-indent: 0 !important;
+          }
+
+          #what-is-mlt figure:nth-child(1) blockquote,
+          #what-is-mlt figure:nth-child(3) blockquote {
+            color: #F2EEE4 !important;
+          }
+
+          #what-is-mlt figure:nth-child(2) blockquote {
+            color: #17211B !important;
+          }
+
+          #what-is-mlt figure:nth-child(1) blockquote em,
+          #what-is-mlt figure:nth-child(3) blockquote em {
+            color: #F7E9C9 !important;
+          }
+
+          #what-is-mlt figure:nth-child(2) blockquote em {
+            color: #9F2E26 !important;
+          }
+
+          #what-is-mlt figcaption {
+            margin: 0 !important;
+            padding: 0 !important;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0 !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-size: 13px !important;
+            line-height: 1.45 !important;
+          }
+
+          #what-is-mlt figcaption > span {
+            margin: 0 0 2px !important;
+            font-weight: 600 !important;
+          }
+
+          #what-is-mlt figcaption > span::before {
+            content: "— ";
+          }
+
+          #what-is-mlt figure:nth-child(1) figcaption > span,
+          #what-is-mlt figure:nth-child(3) figcaption > span {
+            color: #F2EEE4 !important;
+          }
+
+          #what-is-mlt figure:nth-child(2) figcaption > span {
+            color: #17211B !important;
+          }
+
+          #what-is-mlt figcaption a {
+            text-decoration: none !important;
+          }
+
+          #what-is-mlt figure:nth-child(1) figcaption a,
+          #what-is-mlt figure:nth-child(3) figcaption a {
+            color: rgba(242, 238, 228, .72) !important;
+          }
+
+          #what-is-mlt figure:nth-child(2) figcaption a {
+            color: rgba(23, 33, 27, .65) !important;
           }
         }
       </style>
     </section>
 
     <!-- ============ THE COMPANION (redesign) ============ -->
-    <section id="companion" class="scroll-mt-20 bg-parchment">
+    <section id="companion" class="bg-parchment">
       <div class="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 md:grid-cols-[485px_1fr] md:items-stretch md:gap-16">
         <!-- cover, auto-stretched to match the height of the text block on desktop -->
-        <div class="relative mx-auto w-full max-w-[360px] md:mx-0 md:h-[calc(100%+24px)] md:-translate-y-6 md:w-[485px] md:max-w-none">
+        <div class="relative mx-auto aspect-[485/689] w-full max-w-[360px] md:mx-0 md:h-[calc(100%+24px)] md:-translate-y-6 md:w-[485px] md:max-w-none md:aspect-auto">
           <img
             src="/cover-hq.png"
             alt="The Wiley Blackwell Companion to Muslim Liberation Theologies — front cover"
             width="485"
             height="689"
-            class="block w-full object-cover object-right md:absolute md:inset-0 md:h-full md:w-full"
+            class="block h-full w-full object-cover object-right md:absolute md:inset-0 md:h-full md:w-full"
           />
         </div>
 
@@ -436,7 +524,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     </section>
 
     <!-- ============ CONVERSATIONS / PODCAST ============ -->
-    <section id="conversations" class="scroll-mt-20 bg-forest text-parchment">
+    <section id="conversations" class="bg-forest text-parchment">
       <div class="mx-auto max-w-6xl px-5 py-20">
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
           Listen. Reflect. Act.
@@ -528,7 +616,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     </section>
 
     <!-- ============ ESSAYS ============ -->
-    <section id="essays" class="scroll-mt-20 bg-parchment">
+    <section id="essays" class="bg-parchment">
       <div class="mx-auto max-w-6xl px-5 py-20">
         <!-- header -->
         <div>
@@ -564,7 +652,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     </section>
 
     <!-- ============ NETWORK / NEWSLETTER (gold band) ============ -->
-    <section id="network" class="scroll-mt-20 bg-gold text-ink">
+    <section id="network" class="bg-gold text-ink">
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16">
         <!-- left: heading + intro -->
         <div>
