@@ -11,13 +11,79 @@ const year = new Date().getFullYear();
         <p class="font-serif text-lg text-parchment">Muslim Liberation Theology</p>
         <p class="mt-1 text-sm">Founded by {editors}</p>
       </div>
-      <div class="flex items-center gap-6">
+      <div class="ft-links flex items-center gap-6">
         <a
           href="/editors"
-          class="text-sm text-muted transition-colors hover:text-parchment"
+          class="ft-editors text-sm text-muted transition-colors hover:text-parchment"
         >Editors</a>
-        <p class="text-sm">© {year} Muslim Liberation Theology. All rights reserved.</p>
+        <p class="ft-copy text-sm">© {year} Muslim Liberation Theology. All rights reserved.</p>
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+  @media (max-width: 767px) {
+    footer.bg-forest > div {
+      padding: 36px 24px 32px !important;
+    }
+
+    footer.bg-forest > div > div {
+      gap: 0 !important;
+    }
+
+    footer.bg-forest .ft-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    footer.bg-forest .ft-editors {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-family: Georgia, serif;
+      font-size: 17px;
+      line-height: 1.4;
+      color: #F2EEE4;
+      text-decoration: underline;
+      text-decoration-color: rgba(201,168,94,.6);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 7px;
+    }
+
+    footer.bg-forest .ft-editors:hover,
+    footer.bg-forest .ft-editors:active {
+      text-decoration-color: #C9A85E;
+    }
+
+    footer.bg-forest .ft-copy {
+      width: 100%;
+      margin-top: 18px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(242,238,228,.14);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #8E958F;
+    }
+
+    footer.bg-forest > div > div:first-child p:first-child {
+      font-family: Georgia, serif;
+      font-size: 19px;
+      line-height: 1.4;
+      color: rgba(242,238,228,.9);
+    }
+
+    footer.bg-forest > div > div:first-child p:last-child {
+      margin-top: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #ABB1AC;
+    }
+  }
+</style>
