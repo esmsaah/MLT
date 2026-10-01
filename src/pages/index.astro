@@ -24,16 +24,31 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
   <Nav />
 
   <main>
-    <!-- ============ HERO (redesign) ============ -->
+            <!-- ============ HERO (redesign) ============ -->
     <section id="top" class="dk text-parchment" style="background:#1B2620">
       <div
-        class="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1fr_360px] md:gap-20 md:py-20"
+        style="
+          width:min(1152px,calc(100% - 40px));
+          margin:auto;
+          height:530px;
+          display:grid;
+          grid-template-columns:minmax(0,1fr) 380px;
+          gap:80px;
+          padding:0;
+          align-items:center;
+        "
       >
         <!-- Title -->
         <div>
           <h1
-            class="font-serif"
-            style="margin:0; font-weight:400; line-height:.905; letter-spacing:-.035em; font-size:clamp(3rem,10vw,126px)"
+            style="
+              margin:0;
+              font-family:Georgia,Cambria,'Times New Roman',serif;
+              font-weight:400;
+              line-height:.905;
+              letter-spacing:-.035em;
+              font-size:clamp(64px,10vw,126px);
+            "
           >
             Muslim<br />
             <span style="font-style:italic;color:#C9A85E">Liberation</span><br />
@@ -41,20 +56,128 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
           </h1>
         </div>
 
-        <!-- Right: tagline, aligned to the bottom of the title on desktop -->
-        <div class="md:self-end md:mb-[6px]">
+        <!-- Right column -->
+        <div style="align-self:center;padding-bottom:0;transform:none">
+
+          <!-- Qur'an -->
+          <div style="margin-bottom:34px">
+
+            <div
+              lang="ar"
+              dir="rtl"
+              style="
+                font-family:Georgia,Cambria,'Times New Roman',serif;
+                direction:rtl;
+                text-align:left;
+                color:#C9A85E;
+                font-size:34px;
+                line-height:1.65;
+                margin-bottom:7px;
+              "
+            >
+              <span>لِيَقُومَ النَّاسُ بِالْقِسْطِ</span>
+              <span
+                aria-label="Ayah 25"
+                style="
+                  display:inline-flex;
+                  width:34px;
+                  height:34px;
+                  margin-left:9px;
+                  vertical-align:middle;
+                  color:#C9A85E;
+                "
+              >
+                <svg
+                  viewBox="0 0 26 26"
+                  width="34"
+                  height="34"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M13 1.5
+                       C14.8 4.2 16.1 4.8 18.9 4.2
+                       C18.3 7 18.9 8.3 21.5 10
+                       C18.9 11.7 18.3 13 18.9 15.8
+                       C16.1 15.2 14.8 15.8 13 18.5
+                       C11.2 15.8 9.9 15.2 7.1 15.8
+                       C7.7 13 7.1 11.7 4.5 10
+                       C7.1 8.3 7.7 7 7.1 4.2
+                       C9.9 4.8 11.2 4.2 13 1.5Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="0.9"
+                  />
+                  <circle
+                    cx="13"
+                    cy="10"
+                    r="5.2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="0.7"
+                  />
+                  <text
+                    x="13"
+                    y="13"
+                    text-anchor="middle"
+                    font-family="Arial, Helvetica, sans-serif"
+                    font-size="8"
+                    fill="currentColor"
+                  >٢٥</text>
+                </svg>
+              </span>
+              </span>
+            </div>
+
+            <div
+              style="
+                font-family:Georgia,Cambria,'Times New Roman',serif;
+                color:rgba(242,238,228,.92);
+                font-size:17px;
+                line-height:1.45;
+              "
+            >
+              “…that people may uphold justice.”
+            </div>
+
+            <div
+              style="
+                margin-top:7px;
+                color:rgba(242,238,228,.52);
+                font-family:Arial,Helvetica,system-ui,sans-serif;
+                font-size:10px;
+                font-weight:600;
+                letter-spacing:.16em;
+                text-transform:uppercase;
+              "
+            >
+              Qur’an 57:25
+            </div>
+
+          </div>
+
+          <!-- Main statement -->
           <p
-            class="font-serif"
-            style="font-size:clamp(20px,1.75vw,25px);line-height:1.36;letter-spacing:-.005em;color:rgba(242,238,228,.9);text-wrap:pretty"
+            style="
+              font-family:Georgia,Cambria,'Times New Roman',serif;
+              font-size:clamp(20px,1.75vw,25px);
+              line-height:1.36;
+              letter-spacing:-.005em;
+              color:rgba(242,238,228,.9);
+              margin:0;
+            "
           >
-            A living intellectual project that reclaims Islam as a resource for confronting
-            domination and <em style="font-style:italic;color:#C9A85E">imagining liberation.</em>
+            An intellectual project grounded in Islamic principles of
+            <em style="font-style:italic;color:#C9A85E">justice</em>
+            and carried by Muslims who bear
+            <em style="font-style:italic;color:#C9A85E">freedom</em>
+            as a trust.
           </p>
+
         </div>
       </div>
     </section>
 
-    <!-- ============ STATEMENT (red band) ============ -->
+<!-- ============ STATEMENT (red band) ============ -->
     <section id="what-is-mlt" class="scroll-mt-20 bg-brick text-parchment">
       <div class="mx-auto max-w-6xl px-5 py-8 md:px-[72px]">
         <p
