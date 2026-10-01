@@ -113,7 +113,7 @@ export const ENDORSEMENTS = [
   },
   {
     quote:
-      'With thirty contributions encompassing multiple subjects and addressing the world’s diverse regions, it is thematically fascinating, methodologically gripping, and intellectually engaging.',
+      'With thirty-two contributions encompassing multiple subjects and addressing the world’s diverse regions, it is thematically fascinating, methodologically gripping, and intellectually engaging.',
     name: 'Irfan Ahmad',
     title: 'Professor of Anthropology and Sociology, Ibn Haldun University',
     org: 'Ibn Haldun University',

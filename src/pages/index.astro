@@ -178,17 +178,212 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     </section>
 
 <!-- ============ STATEMENT (red band) ============ -->
-    <section id="what-is-mlt" class="scroll-mt-20 bg-brick text-parchment">
-      <div class="mx-auto max-w-6xl px-5 py-8 md:px-[72px]">
-        <p
-          class="max-w-[1010px] font-serif text-2xl leading-snug"
-          style="letter-spacing:-.005em;color:rgba(242,238,228,.95)"
+    <section id="what-is-mlt" class="bg-brick text-parchment">
+      <div
+        style="
+          width:min(1152px,calc(100% - 40px));
+          margin:auto;
+          padding:48px 0;
+        "
+      >
+        <div
+          class="mlt-quotes-grid"
+          style="
+            display:grid;
+            grid-template-columns:330px 330px minmax(0,1fr);
+            column-gap:56px;
+          "
         >
-          Not simply a theology <em style="font-style:italic;color:#F7E9C9">about</em> liberation,
-          but an Islamic mode of thought and praxis that emerges from
-          <em style="font-style:italic;color:#F7E9C9">within</em> struggles for justice.
-        </p>
+
+          <!-- Quote 1 -->
+          <figure
+            style="
+              display:flex;
+              flex-direction:column;
+              gap:14px;
+              margin:0;
+            "
+          >
+            <blockquote
+              style="
+                margin:0;
+                font-family:Georgia,Cambria,'Times New Roman',serif;
+                font-size:17px;
+                line-height:1.45;
+                letter-spacing:-.005em;
+                color:rgba(242,238,228,.96);
+                text-wrap:pretty;
+                text-indent:-.42em;
+              "
+            >
+              “Not a theology <em style="color:#F7E9C9;">about</em> liberation, but theology done from <em style="color:#F7E9C9;">within</em> the struggle, where spirituality becomes responsibility and remembrance becomes resistance.”
+            </blockquote>
+
+            <figcaption
+              style="
+                margin-top:auto;
+                height:38px;
+                display:flex;
+                flex-direction:column;
+                justify-content:flex-start;
+                gap:4px;
+                font-family:Arial,Helvetica,sans-serif;
+                font-size:13px;
+                line-height:1.4;
+              "
+            >
+              <span style="font-weight:600;color:#F2EEE4;">
+                Emin Poljarević &amp; Ivan Ejub Kostić
+              </span>
+              <a
+                href="https://onlinelibrary.wiley.com/doi/10.1002/9781394282517.ch1"
+                target="_blank"
+                rel="noopener"
+                style="
+                  color:rgba(242,238,228,.75);
+                  text-decoration:underline;
+                  text-decoration-color:rgba(242,238,228,.3);
+                  text-underline-offset:4px;
+                "
+              >
+                <em>Setting the Stage: Situating the Muslim Liberation Theology</em> · Chapter 1, The Companion
+              </a>
+            </figcaption>
+          </figure>
+
+          <!-- Quote 2 -->
+          <figure
+            style="
+              display:flex;
+              flex-direction:column;
+              gap:14px;
+              margin:0;
+            "
+          >
+            <blockquote
+              style="
+                margin:0;
+                font-family:Georgia,Cambria,'Times New Roman',serif;
+                font-size:17px;
+                line-height:1.45;
+                letter-spacing:-.005em;
+                color:rgba(242,238,228,.96);
+                text-wrap:pretty;
+                text-indent:-.42em;
+              "
+            >
+              “It is not the Islamic that liberates. It is the Muslim who dares to live by Islamic principles as liberation.”
+            </blockquote>
+
+            <figcaption
+              style="
+                margin-top:auto;
+                height:38px;
+                display:flex;
+                flex-direction:column;
+                justify-content:flex-start;
+                gap:4px;
+                font-family:Arial,Helvetica,sans-serif;
+                font-size:13px;
+                line-height:1.4;
+              "
+            >
+              <span style="font-weight:600;color:#F2EEE4;">
+                Emin Poljarević &amp; Ivan Ejub Kostić
+              </span>
+              <a
+                href="https://onlinelibrary.wiley.com/doi/10.1002/9781394282517.ch1"
+                target="_blank"
+                rel="noopener"
+                style="
+                  color:rgba(242,238,228,.75);
+                  text-decoration:underline;
+                  text-decoration-color:rgba(242,238,228,.3);
+                  text-underline-offset:4px;
+                "
+              >
+                <em>Setting the Stage: Situating the Muslim Liberation Theology</em> · Chapter 1, The Companion
+              </a>
+            </figcaption>
+          </figure>
+
+          <!-- Quote 3 -->
+          <figure
+            style="
+              display:flex;
+              flex-direction:column;
+              gap:14px;
+              margin:0;
+            "
+          >
+            <blockquote
+              style="
+                margin:0;
+                font-family:Georgia,Cambria,'Times New Roman',serif;
+                font-size:17px;
+                line-height:1.45;
+                letter-spacing:-.005em;
+                color:rgba(242,238,228,.96);
+                text-wrap:pretty;
+                text-indent:-.42em;
+              "
+            >
+              “Liberation theology is not a settled doctrine. It is a mode of reasoning under pressure, and it is often forged where the cost of speech is high.”
+            </blockquote>
+
+            <figcaption
+              style="
+                margin-top:auto;
+                height:38px;
+                display:flex;
+                flex-direction:column;
+                justify-content:flex-start;
+                gap:4px;
+                font-family:Arial,Helvetica,sans-serif;
+                font-size:13px;
+                line-height:1.4;
+              "
+            >
+              <span style="font-weight:600;color:#F2EEE4;">
+                Amb. Ebrahim Rasool
+              </span>
+              <a
+                href="https://onlinelibrary.wiley.com/doi/10.1002/9781394282517.fmatter"
+                target="_blank"
+                rel="noopener"
+                style="
+                  color:rgba(242,238,228,.75);
+                  text-decoration:underline;
+                  text-decoration-color:rgba(242,238,228,.3);
+                  text-underline-offset:4px;
+                "
+              >
+                Foreword · The Companion
+              </a>
+            </figcaption>
+          </figure>
+
+        </div>
       </div>
+
+      <style>
+        @media (max-width: 767px) {
+          #what-is-mlt > div {
+            padding-top:40px !important;
+            padding-bottom:40px !important;
+          }
+
+          #what-is-mlt .mlt-quotes-grid {
+            display:flex !important;
+            flex-direction:column !important;
+            gap:40px !important;
+          }
+
+          #what-is-mlt blockquote {
+            font-size:17px !important;
+          }
+        }
+      </style>
     </section>
 
     <!-- ============ THE COMPANION (redesign) ============ -->
@@ -209,7 +404,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
         <div>
           <h2 class="font-serif text-5xl leading-tight md:text-6xl">The Companion</h2>
           <p class="mt-4 text-sm uppercase tracking-wide text-ink/55">
-            592 pages · 32 contributions · Wiley Blackwell
+            592 pages · 32 chapters · five parts · Sunni and Shīʿī voices from West Africa to India, Morocco to Brazil and Malaysia
           </p>
 
           <div class="mt-8 divide-y divide-ink/15 border-t border-ink/15">
@@ -233,7 +428,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
               target="_blank"
               rel="noopener"
               class="inline-block rounded-sm bg-brick px-6 py-3 font-semibold text-parchment transition-opacity hover:opacity-90"
-              >Pre-order the Companion</a
+              >Order the Companion</a
             >
           </div>
         </div>
@@ -244,7 +439,7 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
     <section id="conversations" class="scroll-mt-20 bg-forest text-parchment">
       <div class="mx-auto max-w-6xl px-5 py-20">
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-          Watch. Think. Reflect.
+          Listen. Reflect. Act.
         </p>
         <h2 class="mt-3 font-serif text-4xl leading-tight md:text-5xl">
           MLT Conversations
@@ -374,10 +569,10 @@ const conversations = allEpisodes.filter((e) => e.id !== featured?.id).slice(0, 
         <!-- left: heading + intro -->
         <div>
           <h2 class="font-serif text-4xl leading-[1.1] md:text-6xl">
-            A field is built through conversation.
+            A field is measured by the questions it dares to ask.
           </h2>
           <p class="mt-6 max-w-md text-lg text-ink/80">
-            Receive new essays, conversations, events, and developments in Muslim Liberation Theology.
+            Receive new essays, conversations, and events, and bring your own questions to the network.
           </p>
         </div>
 
